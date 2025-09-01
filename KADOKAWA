@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DXの現場で問われる能力：実践ケーススタディ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 50%, #81d4fa 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #1e293b;
+            font-weight: 400;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(59, 130, 246, 0.15);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 17px;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .case-study {
+            margin-bottom: 32px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(14, 165, 233, 0.12);
+            border: 1px solid rgba(14, 165, 233, 0.1);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .case-study:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(14, 165, 233, 0.18);
+        }
+        
+        .case-study:last-child {
+            margin-bottom: 0;
+        }
+        
+        .case-header {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 24px 32px;
+            font-weight: 500;
+            font-size: 19px;
+            letter-spacing: -0.3px;
+            position: relative;
+        }
+        
+        .case-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            opacity: 0.6;
+        }
+        
+        .case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+        
+        .pattern-section, .ability-section {
+            padding: 32px;
+        }
+        
+        .pattern-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-right: 1px solid rgba(14, 165, 233, 0.15);
+        }
+        
+        .ability-section {
+            background: rgba(255, 255, 255, 0.8);
+        }
+        
+        .section-title {
+            font-weight: 500;
+            font-size: 16px;
+            color: #0c4a6e;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(14, 165, 233, 0.2);
+            letter-spacing: -0.2px;
+        }
+        
+        .pattern-content {
+            line-height: 1.8;
+            font-size: 15px;
+            color: #334155;
+        }
+        
+        .pattern-label {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 16px;
+            letter-spacing: -0.1px;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        }
+        
+        .question-label {
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-block;
+            margin: 20px 0 12px 0;
+            letter-spacing: -0.1px;
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+        }
+        
+        .ability-content {
+            line-height: 1.8;
+            font-size: 15px;
+            color: #334155;
+        }
+        
+        .ability-title {
+            color: #0c4a6e;
+            font-weight: 500;
+            margin-bottom: 12px;
+            font-size: 16px;
+            letter-spacing: -0.2px;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #bfdbfe 0%, #dbeafe 100%);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: #0c4a6e;
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+        
+
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DXの現場で問われる能力：実践ケーススタディ</h1>
+            <p>学生プロジェクトの振り返りと今後の成長指針として</p>
+        </div>
+        
+        <div class="content">
+            <div class="case-study">
+                <div class="case-header">1. 投資対効果（ROI）</div>
+                <div class="case-content">
+                    <div class="pattern-section">
+                        <div class="section-title">現場でよくあるパターン</div>
+                        <div class="pattern-content">
+                            <div class="pattern-label">パターン</div>
+                            <p>「このツールを導入すれば、業務がすごく効率化します！」「年間〇〇時間の工数削減が可能です！」と意気込んで提案。</p>
+                            
+                            <div class="question-label">上部からの問い</div>
+                            <p>「それは具体的に、会社の利益にどう繋がるの？」「その工数削減で、売上は上がるの？ 人件費は減るの？」</p>
+                        </div>
+                    </div>
+                    <div class="ability-section">
+                        <div class="section-title">問われる能力と重要性</div>
+                        <div class="ability-content">
+                            <div class="ability-title">投資対効果の算出能力：</div>
+                            <p>単なる「便利さ」だけでなく、<span class="highlight">具体的な数字（コスト、売上、利益）</span>でプロジェクトの価値を説明する力が不可欠です。この視点がなければ、どんなに素晴らしいアイデアも予算がつきません。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">2. 利用促進と定着</div>
+                <div class="case-content">
+                    <div class="pattern-section">
+                        <div class="section-title">現場でよくあるパターン</div>
+                        <div class="pattern-content">
+                            <div class="pattern-label">パターン</div>
+                            <p>完璧なシステムを開発してリリースしたものの、現場の社員が誰も使ってくれない。</p>
+                            
+                            <div class="question-label">上部からの問い</div>
+                            <p>「なぜ使われないの？」「どうやってみんなに使い方を教えるの？」「本当に使ってくれるか、どうやって確かめたの？」</p>
+                        </div>
+                    </div>
+                    <div class="ability-section">
+                        <div class="section-title">問われる能力と重要性</div>
+                        <div class="ability-content">
+                            <div class="ability-title">ユーザー視点の理解と巻き込み力：</div>
+                            <p>システムは「作る」ことより「使ってもらう」ことの方が難しい。現場の意見を聞き、使いやすい設計にすること、そして<span class="highlight">「使ってみたい」と思わせる仕組み</span>を作ることが成功の鍵です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">3. コンプライアンスとリスク管理</div>
+                <div class="case-content">
+                    <div class="pattern-section">
+                        <div class="section-title">現場でよくあるパターン</div>
+                        <div class="pattern-content">
+                            <div class="pattern-label">パターン</div>
+                            <p>「無料ツールを組み合わせて、コストゼロで実現しました！」と提案。</p>
+                            
+                            <div class="question-label">上部からの問い</div>
+                            <p>「そのツールのデータはどこに保存されるの？」「個人情報保護の観点から、法的なリスクはないか？」</p>
+                        </div>
+                    </div>
+                    <div class="ability-section">
+                        <div class="section-title">問われる能力と重要性</div>
+                        <div class="ability-content">
+                            <div class="ability-title">潜在リスクの発見と対応力：</div>
+                            <p>目の前のメリットだけでなく、<span class="highlight">「見えないリスク」</span>を想定し、事前に対策を講じる力が求められます。特に個人情報を扱うプロジェクトでは、セキュリティや法律への理解が不可欠です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">4. 事業成長と拡張性</div>
+                <div class="case-content">
+                    <div class="pattern-section">
+                        <div class="section-title">現場でよくあるパターン</div>
+                        <div class="pattern-content">
+                            <div class="pattern-label">パターン</div>
+                            <p>目の前の課題解決に集中し、特定の部署だけが使う専用システムを開発。</p>
+                            
+                            <div class="question-label">上部からの問い</div>
+                            <p>「このシステムは他の部署でも使える？」「数年後の会社の目標を考えた時、このシステムはどう役立つの？」</p>
+                        </div>
+                    </div>
+                    <div class="ability-section">
+                        <div class="section-title">問われる能力と重要性</div>
+                        <div class="ability-content">
+                            <div class="ability-title">長期的な視点と全体最適の思考：</div>
+                            <p>短期的な課題解決だけでなく、将来のビジネス展開や会社全体の成長にどう貢献するかを考える力が重要です。一つの成功を、会社全体のDXへと広げるために必要な能力です。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-study">
+                <div class="case-header">5. 課題の本質を見抜く力</div>
+                <div class="case-content">
+                    <div class="pattern-section">
+                        <div class="section-title">現場でよくあるパターン</div>
+                        <div class="pattern-content">
+                            <div class="pattern-label">パターン</div>
+                            <p>「事務作業を効率化したい」という要望に対し、新しい入力フォームを開発。</p>
+                            
+                            <div class="question-label">上部からの問い</div>
+                            <p>「そもそも、なぜその事務作業が必要なの？」「その作業自体をなくすことはできないの？」</p>
+                        </div>
+                    </div>
+                    <div class="ability-section">
+                        <div class="section-title">問われる能力と重要性</div>
+                        <div class="ability-content">
+                            <div class="ability-title">真の課題発見力：</div>
+                            <p>依頼されたことだけをやるのではなく、<span class="highlight">「そもそも何のために、この作業があるのか？」</span>という本質的な問いを立てる力です。この力がなければ、無駄な業務をデジタル化してしまうというDXの最大の失敗に繋がります。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </div>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9780c6dc327ed523',t:'MTc1NjY4Nzg2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
