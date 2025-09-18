@@ -199,8 +199,8 @@
         </div>
 
         <div class="table-container mb-8 comparison-table">
-            <div class="overflow-x-auto">
-                <table class="w-full min-w-[1000px]">
+            <div class="overflow-x-auto mx-auto">
+                <table class="w-full">
                     <thead>
                         <tr class="table-header">
                             <th class="px-6 py-5 text-left font-semibold text-lg">比較項目</th>
@@ -373,9 +373,8 @@
             // PC表示の更新
             const headerCells = document.querySelectorAll('.comparison-table th[data-tool]');
             const tableRows = document.querySelectorAll('.comparison-table .tool-row');
-            const firstHeader = document.querySelector('.comparison-table th:first-child');
-            const selectedCount = selectedTools.length;
-
+            const pcTableWrapper = document.querySelector('.comparison-table .overflow-x-auto');
+            
             headerCells.forEach(header => {
                 const toolName = header.getAttribute('data-tool');
                 header.style.display = selectedTools.includes(toolName) ? '' : 'none';
@@ -390,6 +389,20 @@
                     }
                 });
             });
+
+            // テーブル幅を動的に設定して中央寄せ
+            const selectedCount = selectedTools.length;
+            const table = document.querySelector('.comparison-table table');
+            const comparisonColumnWidth = 120; // 比較項目列の幅を固定 (px)
+            const toolColumnWidth = 120; // ツール列の幅を固定 (px)
+
+            // 選択された列数に応じてテーブルの幅を計算
+            const totalWidth = comparisonColumnWidth + (toolColumnWidth * selectedCount);
+            table.style.width = `${totalWidth}px`;
+            
+            // overflow-x-autoのコンテナの幅もテーブルと同じにする
+            pcTableWrapper.style.width = `${totalWidth}px`;
+
 
             // モバイル表示の更新
             let mobileHtml = '';
