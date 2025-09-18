@@ -163,27 +163,27 @@
         <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg mb-8">
             <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 text-center">🎯 比較するツールを選択</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-4">
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="gas" checked>
                     <span class="text-sm font-medium">GAS</span>
                 </label>
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="vba" checked>
                     <span class="text-sm font-medium">VBA</span>
                 </label>
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="powershell" checked>
                     <span class="text-sm font-medium">PowerShell</span>
                 </label>
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="rpa" checked>
                     <span class="text-sm font-medium">RPAツール</span>
                 </label>
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="javascript" checked>
                     <span class="text-sm font-medium">JavaScript</span>
                 </label>
-                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
+                <label class="flex items-center justify-center sm:justify-start space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors w-full md:w-auto hover:bg-gray-100">
                     <input type="checkbox" class="tool-checkbox" data-tool="python" checked>
                     <span class="text-sm font-medium">Python</span>
                 </label>
@@ -200,29 +200,29 @@
 
         <div class="table-container mb-8 comparison-table">
             <div class="overflow-x-auto mx-auto">
-                <table class="w-full">
+                <table id="pc-table" class="w-full">
                     <thead>
                         <tr class="table-header">
-                            <th class="px-6 py-5 text-left font-semibold text-lg">比較項目</th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="gas" data-tags="google,free">
+                            <th class="px-6 py-5 text-left font-semibold text-lg" style="min-width: 150px;">比較項目</th>
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="gas" data-tags="google,free" style="min-width: 150px;">
                                 <div class="text-base font-bold">GAS</div>
                                 <div class="text-sm font-normal opacity-90">(Google Apps Script)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="vba" data-tags="office,easy">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="vba" data-tags="office,easy" style="min-width: 150px;">
                                 <div class="text-base font-bold">VBA</div>
                                 <div class="text-sm font-normal opacity-90">(Excel等)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="powershell" data-tags="free,easy">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="powershell" data-tags="free,easy" style="min-width: 150px;">
                                 <div class="text-base font-bold">PowerShell</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="rpa" data-tags="easy">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="rpa" data-tags="easy" style="min-width: 150px;">
                                 <div class="text-base font-bold">RPAツール</div>
                                 <div class="text-sm font-normal opacity-90">(UiPath等)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="javascript" data-tags="free,easy">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="javascript" data-tags="free,easy" style="min-width: 150px;">
                                 <div class="text-base font-bold">JavaScript</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="python" data-tags="google,office,free">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="python" data-tags="google,office,free" style="min-width: 150px;">
                                 <div class="text-base font-bold">Python</div>
                             </th>
                         </tr>
@@ -390,19 +390,18 @@
                 });
             });
 
-            // テーブル幅を動的に設定して中央寄せ
+            // テーブルの幅を計算し、中央寄せ
             const selectedCount = selectedTools.length;
-            const table = document.querySelector('.comparison-table table');
-            const comparisonColumnWidth = 120; // 比較項目列の幅を固定 (px)
-            const toolColumnWidth = 120; // ツール列の幅を固定 (px)
+            const table = document.getElementById('pc-table');
+            const comparisonColumnWidth = 150; // 比較項目列の幅 (px)
+            const toolColumnWidth = 150; // ツール列の幅 (px)
 
             // 選択された列数に応じてテーブルの幅を計算
             const totalWidth = comparisonColumnWidth + (toolColumnWidth * selectedCount);
-            table.style.width = `${totalWidth}px`;
             
-            // overflow-x-autoのコンテナの幅もテーブルと同じにする
+            // テーブルとコンテナの幅を固定
+            table.style.width = `${totalWidth}px`;
             pcTableWrapper.style.width = `${totalWidth}px`;
-
 
             // モバイル表示の更新
             let mobileHtml = '';
