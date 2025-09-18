@@ -162,28 +162,28 @@
 
         <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg mb-8">
             <h2 class="text-lg sm:text-xl font-bold text-gray-800 mb-4 text-center">🎯 比較するツールを選択</h2>
-            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-4">
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 mb-4">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="gas" checked>
                     <span class="text-sm font-medium">GAS</span>
                 </label>
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="vba" checked>
                     <span class="text-sm font-medium">VBA</span>
                 </label>
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="powershell" checked>
                     <span class="text-sm font-medium">PowerShell</span>
                 </label>
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="rpa" checked>
                     <span class="text-sm font-medium">RPAツール</span>
                 </label>
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="javascript" checked>
                     <span class="text-sm font-medium">JavaScript</span>
                 </label>
-                <label class="flex items-center justify-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors flex-grow hover:bg-gray-100">
+                <label class="flex items-center space-x-2 cursor-pointer p-2 sm:p-3 rounded-lg border-2 border-gray-200 hover:border-blue-300 transition-colors">
                     <input type="checkbox" class="tool-checkbox" data-tool="python" checked>
                     <span class="text-sm font-medium">Python</span>
                 </label>
@@ -199,30 +199,30 @@
         </div>
 
         <div class="table-container mb-8 comparison-table">
-            <div class="overflow-x-auto mx-auto">
-                <table id="pc-table" class="w-full">
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-[1000px]">
                     <thead>
                         <tr class="table-header">
-                            <th class="px-6 py-5 text-left font-semibold text-lg" style="min-width: 180px;">比較項目</th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="gas" data-tags="google,free" style="min-width: 160px;">
+                            <th class="px-6 py-5 text-left font-semibold text-lg">比較項目</th>
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="gas" data-tags="google,free">
                                 <div class="text-base font-bold">GAS</div>
                                 <div class="text-sm font-normal opacity-90">(Google Apps Script)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="vba" data-tags="office,easy" style="min-width: 160px;">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="vba" data-tags="office,easy">
                                 <div class="text-base font-bold">VBA</div>
                                 <div class="text-sm font-normal opacity-90">(Excel等)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="powershell" data-tags="free,easy" style="min-width: 160px;">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="powershell" data-tags="free,easy">
                                 <div class="text-base font-bold">PowerShell</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="rpa" data-tags="easy" style="min-width: 160px;">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="rpa" data-tags="easy">
                                 <div class="text-base font-bold">RPAツール</div>
                                 <div class="text-sm font-normal opacity-90">(UiPath等)</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="javascript" data-tags="free,easy" style="min-width: 160px;">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="javascript" data-tags="free,easy">
                                 <div class="text-base font-bold">JavaScript</div>
                             </th>
-                            <th class="px-4 py-5 text-center font-semibold" data-tool="python" data-tags="google,office,free" style="min-width: 160px;">
+                            <th class="px-4 py-5 text-center font-semibold" data-tool="python" data-tags="google,office,free">
                                 <div class="text-base font-bold">Python</div>
                             </th>
                         </tr>
@@ -256,7 +256,7 @@
                             <td class="px-4 py-5 text-center"><span class="strength-badge strength-medium">△ 必要</span></td>
                         </tr>
                         <tr class="tool-row border-b border-gray-100" data-category="learning">
-                            <td class="px-6 py-5 text-gray-800 bg-gray-50">習得の容易さ</td>
+                            <td class="px-6 py-5 font-semibold text-gray-800 bg-gray-50">習得の容易さ</td>
                             <td class="px-4 py-5 text-center"><span class="strength-badge strength-medium">△ 普通</span></td>
                             <td class="px-4 py-5 text-center"><span class="strength-badge strength-excellent">◎ 簡単</span></td>
                             <td class="px-4 py-5 text-center"><span class="strength-badge strength-high">○ やや簡単</span></td>
@@ -373,7 +373,9 @@
             // PC表示の更新
             const headerCells = document.querySelectorAll('.comparison-table th[data-tool]');
             const tableRows = document.querySelectorAll('.comparison-table .tool-row');
-            
+            const firstHeader = document.querySelector('.comparison-table th:first-child');
+            const selectedCount = selectedTools.length;
+
             headerCells.forEach(header => {
                 const toolName = header.getAttribute('data-tool');
                 header.style.display = selectedTools.includes(toolName) ? '' : 'none';
